@@ -3,6 +3,17 @@ const modal = document.getElementById('modal');
 
 const showImg = document.getElementById('showImg');
 
+
+function downBtn(down){
+
+    console.log(down);
+
+   
+    saveAs(down, 'randomImage');
+
+
+}
+
 function clickPict(img) {
 
     $('.ui.modal')
@@ -11,10 +22,15 @@ function clickPict(img) {
 showImg.innerHTML = `
 
 <div class="actions">
+    <div class="ui primary basic cancel inverted button" onclick="downBtn(this.parentElement.parentElement.children[1].children[0].src)">
+        <i class="download icon" ></i>
+       Download
+    </div>
     <div class="ui red basic cancel inverted button">
         <i class="remove icon"></i>
        close
     </div>
+    
     
 </div>
 <div class="content">
